@@ -1,5 +1,6 @@
 from io import BytesIO
 from unittest import TestCase
+from unittest import main as testmain
 
 import json
 import requests
@@ -286,3 +287,7 @@ class TxTest(TestCase):
         stream = BytesIO(raw_tx)
         tx = Tx.parse(stream)
         self.assertEqual(tx.fee(), 140500)
+
+
+if __name__ == '__main__':
+    testmain()
